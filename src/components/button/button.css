@@ -1,1 +1,164 @@
-/* .s-button {} */
+.s-button {
+	padding: var(--s-space-2) var(--s-space-4);
+	border-radius: var(--s-border-radius-sm);
+	font-size: var(--s-font-size-sm);
+	font-family: var(--s-font-family-main);
+	font-weight: var(--s-font-weight-medium);
+	line-height: var(--s-line-height-body);
+	cursor: pointer;
+	transition: all var(--s-duration-fast);
+	display: inline-flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	letter-spacing: 0;
+	gap: var(--s-space-2);
+	box-shadow: var(--s-shadow-xs);
+
+	background-color: var(--s-color-brand-lighter);
+	border: 1px solid var(--s-color-lm-gray-600);
+	color: var(--s-color-gray-950);
+
+	&:hover {
+		filter: brightness(0.85);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	&:focus-visible {
+		outline: 2px solid;
+		outline-offset: 2px;
+	}
+
+	&:disabled {
+		filter: grayscale(1);
+		opacity: 0.75;
+		cursor: not-allowed;
+	}
+
+	&:disabled:hover {
+		filter: grayscale(1);
+	}
+
+	/* --------------------------------------------------------------------------
+	Variants
+	-------------------------------------------------------------------------- */
+
+	&.-primary {
+		background-color: var(--s-color-brand);
+		border-color: var(--s-color-brand);
+		color: var(--s-color-gray-50);
+	}
+
+	&.-secondary {
+		background-color: var(--s-color-brand-light);
+		border-color: var(--s-color-brand-light);
+		color: var(--s-color-gray-50);
+	}
+
+	&.-outline {
+		background-color: var(--s-color-gray-200);
+		color: var(--s-color-gray-950);
+		border: var(--s-border-strong);
+		min-height: 30px;
+	}
+
+	&.-danger {
+		color: var(--s-color-red-lighter);
+		background-color: var(--s-color-red);
+		border-color: var(--s-color-red);
+	}
+
+	&.-invisible {
+		color: inherit;
+		background-color: inherit;
+		border: none;
+		box-shadow: none;
+
+		&:hover:not(:disabled) {
+			background-color: var(--s-color-brand-lighter);
+		}
+	}
+
+	&.-link {
+		background: none;
+		border: none;
+		box-shadow: none;
+		padding: 0;
+		text-decoration: underline;
+		color: var(--s-color-gray-950);
+		cursor: pointer;
+		filter: none;
+
+		&:hover:not(:disabled) {
+			text-decoration-thickness: 2px;
+			filter: none;
+		}
+
+		&:disabled {
+			cursor: not-allowed;
+			filter: none;
+			opacity: 0.75;
+		}
+
+		&.-danger {
+			color: var(--s-color-red);
+		}
+	}
+
+	/* --------------------------------------------------------------------------
+	Sizes
+	-------------------------------------------------------------------------- */
+
+	&.-sm {
+		padding: var(--s-space-1) var(--s-space-3);
+		font-size: var(--s-font-size-sm);
+	}
+
+	&.-lg {
+		padding: var(--s-space-3) var(--s-space-5);
+	}
+
+	&.-xl {
+		padding: var(--s-space-3) var(--s-space-6);
+	}
+
+	&.-\2xl {
+		padding: var(--s-space-5) var(--s-space-8);
+	}
+
+	/* --------------------------------------------------------------------------
+	Modifiers
+	-------------------------------------------------------------------------- */
+
+	&.-square {
+		aspect-ratio: 1;
+
+		&.-sm {
+			padding: var(--s-space-1);
+		}
+		&,
+		&.-md {
+			padding: var(--s-space-2);
+		}
+		&.-lg {
+			padding: var(--s-space-3);
+		}
+		&.-xl {
+			padding: var(--s-space-3-5);
+		}
+		&.-\2xl {
+			padding: var(--s-space-5);
+		}
+	}
+
+	&.-block {
+		width: 100%;
+		margin-top: var(--s-space-3);
+		flex-shrink: 0;
+		min-height: 30px;
+	}
+}
