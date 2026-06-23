@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.playwright-mcp
+test-results/
+
+# Build outputs
+dist/
+*.zip
+*.xpi
+*.crx
+
+# Source generated icons (regenerated from SVG)
+src/icons/icon*.png
+
+# Test coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# Temporary files
+*.tmp
+.cache/
+
+# Environment
+.env
+.env.local
+.env.*.local
