@@ -3,9 +3,8 @@ import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { basename, join } from 'node:path';
 
 const ENTRIES: Record<string, string> = {
-	'react/button': 'src/components/button/button.tsx',
-	'react/toggle': 'src/components/toggle/toggle.tsx',
 	'react/index': 'src/react.ts',
+	'react/button': 'src/components/button/button.tsx',
 }
 
 export default defineConfig({
