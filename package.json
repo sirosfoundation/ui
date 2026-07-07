@@ -39,17 +39,17 @@
 		"@fontsource/inter": "^5.2.8"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.0",
+		"@biomejs/biome": "^2.5.2",
 		"@changesets/changelog-github": "^0.7.0",
 		"@changesets/cli": "^2.31.0",
-		"@types/node": "^26.0.0",
+		"@types/node": "^26.1.0",
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.2.3",
-		"lucide-react": "^1.21.0",
-		"react-router": "^8.0.1",
-		"react-router-dom": "^7.18.0",
+		"lucide-react": "^1.23.0",
+		"react-router": "^8.1.0",
+		"react-router-dom": "^7.18.1",
 		"tsdown": "^0.22.3",
-		"typescript": "^5.9.3"
+		"typescript": "^6.0.3"
 	},
 	"peerDependencies": {
 		"react": "^19.0.0"
