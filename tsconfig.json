@@ -17,6 +17,7 @@
 	"include": [
 		"src/**/*.ts",
 		"src/**/*.tsx",
+		"src/env.d.ts",
 		"playground/**/*.ts",
 		"playground/**/*.tsx",
 		"tsdown.config.ts",
