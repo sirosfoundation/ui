@@ -33,7 +33,9 @@
 		"typecheck": "tsc --noEmit",
 		"lint": "biome check",
 		"lint:fix": "biome check --write",
-		"format": "biome format --write"
+		"format": "biome format --write",
+		"docs:dev": "pnpm --filter ui-docs dev",
+		"docs:build": "pnpm --filter ui-docs build"
 	},
 	"dependencies": {
 		"@fontsource/inter": "^5.2.8"

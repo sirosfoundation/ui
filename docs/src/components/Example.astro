@@ -1,0 +1,80 @@
+---
+import { Code } from 'astro:components';
+import { getEntry } from 'astro:content';
+
+interface Props {
+	name: string;
+}
+
+const { name } = Astro.props;
+const { component } = Astro.params as { component: string };
+
+const entry = await getEntry('examples', `${component}/examples/${name}`);
+if (!entry) {
+	throw new Error(`Example not found: ${component}/examples/${name}`);
+}
+
+const src = `/examples/${component}/${name}/`;
+const lang = entry.data.lang ?? 'tsx';
+---
+
+<section class="docs-example">
+	{entry.data.title && <h3 class="title">{entry.data.title}</h3>}
+	<figure class="preview">
+		<iframe
+			class="frame"
+			src={src}
+			title={entry.data.title}
+			loading="lazy"
+		></iframe>
+	</figure>
+	<Code code={entry.body ?? ''} lang={lang as any} />
+</section>
+
+<style>
+	.docs-example {
+		margin: 0 0 2rem;
+	}
+
+	.docs-example > .title {
+		margin: 0 0 0.75rem;
+	}
+
+	.docs-example > .preview {
+		margin: 0 0 0.75rem;
+		border: 1px solid #d0d7de;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.docs-example > .preview > .frame {
+		display: block;
+		width: 100%;
+		border: 0;
+		height: 6rem;
+	}
+</style>
+
+<script>
+	function fit(frame: HTMLIFrameElement) {
+		const doc = frame.contentDocument;
+		if (!doc?.body) return;
+		frame.style.height = `${doc.documentElement.scrollHeight}px`;
+	}
+
+	const frames = document.querySelectorAll<HTMLIFrameElement>(
+		'.docs-example > .preview > .frame'
+	);
+
+	for (const frame of frames) {
+		const resize = () => fit(frame);
+		frame.addEventListener('load', () => {
+			resize();
+			const doc = frame.contentDocument;
+			if (doc?.body && 'ResizeObserver' in window) {
+				new ResizeObserver(resize).observe(doc.body);
+			}
+		});
+		if (frame.contentDocument?.readyState === 'complete') resize();
+	}
+</script>

@@ -68,8 +68,8 @@ export function Button<T extends AllowedElements = 'button'>({
 
 	if (square) classList.push('-square');
 
-	const IconLeft = typeof icon === 'object' ? icon.right : icon;
-	const IconRight = typeof icon === 'object' && icon.right;
+	const IconLeft = icon && 'left' in icon ? icon.left : icon;
+	const IconRight = icon && 'right' in icon ? icon.right : undefined;
 
 	// Since T is a generic type, props cannot be directly passed to Component without casting
 	return (
