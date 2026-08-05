@@ -1,0 +1,35 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{description && <meta name="description" content={description} />}
+		<title>{title}</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+			>
+	</head>
+	<body>
+		<main class="docs">
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	.docs {
+		max-width: 48rem;
+		margin-inline: auto;
+		padding: 2.5rem 1.25rem 5rem;
+	}
+</style>

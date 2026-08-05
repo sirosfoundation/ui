@@ -1,0 +1,26 @@
+{
+	"name": "ui-playground",
+	"description": "Docs/dev site for @sirosfoundation/ui",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^4.3.0",
+		"@astrojs/react": "^4.3.0",
+		"@sirosfoundation/ui": "workspace:*",
+		"astro": "^5.13.0",
+		"lucide-react": "^1.21.0",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"@types/react": "^19.0.0",
+		"@types/react-dom": "^19.2.3"
+	}
+}

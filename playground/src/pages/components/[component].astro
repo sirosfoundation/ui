@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import Example from '../../components/Example.astro';
+
+export async function getStaticPaths() {
+	const entries = await getCollection('componentDocs');
+
+	return entries.map((entry) => {
+		const component = entry.id.split('/')[0];
+
+		return {
+			params: { component },
+			props: { entry },
+		};
+	});
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<DocsLayout title={entry.data.title} description={entry.data.description}>
+	<Content components={{ Example }} />
+</DocsLayout>
