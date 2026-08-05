@@ -56,18 +56,17 @@ const lang = entry.data.lang ?? 'tsx';
 </style>
 
 <script>
-	function fit(frame: HTMLIFrameElement) {
-		const doc = frame.contentDocument;
-		if (!doc?.body) return;
-		frame.style.height = `${doc.documentElement.scrollHeight}px`;
-	}
-
 	const frames = document.querySelectorAll<HTMLIFrameElement>(
 		'.docs-example > .preview > .frame'
 	);
 
 	for (const frame of frames) {
-		const resize = () => fit(frame);
+		const resize = () => {
+			const doc = frame.contentDocument;
+			if (!doc?.body) return;
+			frame.style.height = `${doc.documentElement.scrollHeight}px`;
+		};
+
 		frame.addEventListener('load', () => {
 			resize();
 			const doc = frame.contentDocument;
@@ -75,6 +74,7 @@ const lang = entry.data.lang ?? 'tsx';
 				new ResizeObserver(resize).observe(doc.body);
 			}
 		});
+
 		if (frame.contentDocument?.readyState === 'complete') resize();
 	}
 </script>
