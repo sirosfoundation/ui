@@ -34,8 +34,8 @@
 		"lint": "biome check",
 		"lint:fix": "biome check --write",
 		"format": "biome format --write",
-		"docs:dev": "pnpm --filter ui-docs dev",
-		"docs:build": "pnpm --filter ui-docs build"
+		"playground:dev": "pnpm --filter ui-playground dev",
+		"playground:build": "pnpm --filter ui-playground build"
 	},
 	"dependencies": {
 		"@fontsource/inter": "^5.2.8"

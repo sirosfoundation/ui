@@ -1,5 +1,5 @@
 {
-	"name": "ui-docs",
+	"name": "ui-playground",
 	"description": "Docs/dev site for @sirosfoundation/ui",
 	"type": "module",
 	"private": true,
