@@ -41,16 +41,16 @@
 		"@fontsource/inter": "^5.3.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.10",
-		"@changesets/changelog-github": "^1.0.0",
-		"@changesets/cli": "^3.0.1",
-		"@types/node": "^26.2.0",
+		"@biomejs/biome": "^2.5.12",
+		"@changesets/changelog-github": "^1.0.1",
+		"@changesets/cli": "^3.0.2",
+		"@types/node": "^26.4.1",
 		"@types/react": "^19.2.18",
-		"@types/react-dom": "^19.2.4",
-		"lucide-react": "^1.33.0",
-		"react-router": "^8.3.0",
-		"react-router-dom": "^7.18.2",
-		"tsdown": "^0.22.14",
+		"@types/react-dom": "^19.2.7",
+		"lucide-react": "^1.41.0",
+		"react-router": "^8.3.1",
+		"react-router-dom": "^7.18.3",
+		"tsdown": "^0.23.0",
 		"typescript": "^7.0.2"
 	},
 	"peerDependencies": {
