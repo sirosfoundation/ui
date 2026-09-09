@@ -28,9 +28,8 @@ jobs:
       - name: Astro Deploy
         uses: withastro/action@acfe56dffc635abfb9506c77d51ce097030360d1
         with:
-          # The node version to use
+          path: .
+          out-dir: ./playground/dist
           node-version: 24
-          # You may specify your preferred package manager (one of `npm | yarn | pnpm | bun` and an optional `@<version>` tag). Otherwise, the package manager will be automatically detected.
-          package-manager: pnpm
-          # Path of the directory containing your site
-          path: ./playground
+          package-manager: pnpm@latest
+          build-cmd: pnpm run playground:build
