@@ -16,7 +16,7 @@ const components = (await getCollection('componentDocs'))
 		{
 			components.map((component) => (
 				<li>
-					<a href={`/components/${component.slug}/`}>{component.title}</a>
+					<a href={`/ui/components/${component.slug}/`}>{component.title}</a>
 				</li>
 			))
 		}
