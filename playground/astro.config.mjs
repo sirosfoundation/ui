@@ -9,6 +9,8 @@ const libCss = fileURLToPath(new URL('../src/style.css', import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://sirosfoundation.github.io',
+  	base: '/ui',
 	integrations: [react(), mdx()],
 	devToolbar: {
 		enabled: false,
