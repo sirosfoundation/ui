@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Astro Deploy
-        uses: withastro/action@v6.1.2
+        uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853
         with:
           path: .
           out-dir: ./playground/dist
