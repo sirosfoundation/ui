@@ -11,16 +11,16 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^8.0.0",
+		"@astrojs/mdx": "^8.0.1",
 		"@astrojs/react": "^6.0.5",
 		"@sirosfoundation/ui": "workspace:*",
-		"astro": "^7.3.1",
-		"lucide-react": "^1.41.0",
-		"react": "^19.2.8",
-		"react-dom": "^19.2.8"
+		"astro": "^7.3.2",
+		"lucide-react": "^1.45.0",
+		"react": "^19.3.0",
+		"react-dom": "^19.3.0"
 	},
 	"devDependencies": {
-		"@types/react": "^19.2.18",
-		"@types/react-dom": "^19.2.7"
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0"
 	}
 }
